@@ -33,10 +33,17 @@ public class SquareServlet extends HttpServlet {
 
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-       PrintWriter out = response.getWriter();
-       int k = (int) request.getAttribute("k");
+       ///
+        PrintWriter out = response.getWriter();
+//       int k = (int) request.getAttribute("k");
+//       out.println("hello to square servlet and result was " + k);
+       ////
 
-       out.println("hello to square servlet and result was " + k);
+
+        int k = Integer.parseInt(request.getParameter("k"));
+        System.out.println("sq called");
+        out.println("hello to square servlet and result was " + k);
+
     }
 
     @Override

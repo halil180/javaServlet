@@ -43,10 +43,15 @@ public class MyServlet extends HttpServlet {
         //REQ DISPATCHER OR Redirect
 
 
-        request.setAttribute("k",k);
-        //Using the RequestDispatcher object we send a request to other resources which include (servlet, HTML file, or JSP file). A RequestDispatcher object can be used to forward a request to the resource or to include the resource in a response. The resource can be dynamic or static.
-        RequestDispatcher rd = request.getRequestDispatcher("/sq");
-        rd.forward(request,response);
+        response.sendRedirect("sq?k="+k); // URL rewriting
+
+        ////////
+//        request.setAttribute("k",k);
+//        //Using the RequestDispatcher object we send a request to other resources which include (servlet, HTML file, or JSP file). A RequestDispatcher object can be used to forward a request to the resource or to include the resource in a response. The resource can be dynamic or static.
+//        RequestDispatcher rd = request.getRequestDispatcher("/sq");
+//        rd.forward(request,response);
+
+        ///////
     }
 
 
